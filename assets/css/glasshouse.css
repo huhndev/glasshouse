@@ -144,6 +144,9 @@ h1 a:hover{color:var(--c)}
   .row .url{display:none}
   .cta{flex-direction:column}
   .btn{justify-content:center}
+  .head{flex-wrap:nowrap}
+  .status-pill{padding:.5rem;gap:0}
+  .status-pill .stext{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);border:0;white-space:nowrap}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
