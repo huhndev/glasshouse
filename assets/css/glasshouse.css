@@ -141,6 +141,7 @@ h1 a:hover{color:var(--c)}
 .prose code{font-family:var(--mono);font-size:.85em}
 
 @media (max-width:480px){
+  body{align-items:flex-start}
   .row .url{display:none}
   .cta{flex-direction:column}
   .btn{justify-content:center}
