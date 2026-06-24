@@ -142,7 +142,8 @@ h1 a:hover{color:var(--c)}
 
 @media (max-width:480px){
   .row .url{display:none}
-  .btn{flex:1;justify-content:center}
+  .cta{flex-direction:column}
+  .btn{justify-content:center}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
