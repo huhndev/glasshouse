@@ -1,0 +1,2 @@
+{{- $intro := site.Params.intro -}}
+<p class="intro"><span class="moin">{{ site.Params.greeting }}</span> {{ $intro.pre }}{{- with $intro.linkURL }}<a href="{{ . }}">{{ $intro.linkText }}</a>{{- end }}{{- with $intro.post }}{{ . }}{{- end }}</p>

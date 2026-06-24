@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Lang | default "en" }}" data-palette="{{ site.Params.palette | default "daybreak" }}">
+<head>
+{{ partial "head.html" . }}
+</head>
+<body class="{{ if .IsHome }}home{{ else }}page{{ end }}">
+  <div class="blob b1" aria-hidden="true"></div>
+  <div class="blob b2" aria-hidden="true"></div>
+  <div class="blob b3" aria-hidden="true"></div>
+
+  <main class="card">
+    <div class="head">
+      {{- if .IsHome }}
+      <h1>{{ site.Title }}</h1>
+      {{- else }}
+      <h1><a href="{{ "/" | relURL }}">{{ site.Title }}</a></h1>
+      {{- end }}
+      {{ partial "status-pill.html" . }}
+    </div>
+    {{ block "main" . }}{{ end }}
+    {{ partial "footer.html" . }}
+  </main>
+
+  {{ partial "scripts.html" . }}
+</body>
+</html>

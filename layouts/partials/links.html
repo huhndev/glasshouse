@@ -1,0 +1,11 @@
+<nav class="links" aria-label="Reference links">
+  {{- range site.Params.links.main }}
+  {{ partial "link-row.html" . }}
+  {{- end }}
+  {{- with site.Params.links.more }}
+  <div class="divider" aria-hidden="true"></div>
+  {{- range . }}
+  {{ partial "link-row.html" . }}
+  {{- end }}
+  {{- end }}
+</nav>

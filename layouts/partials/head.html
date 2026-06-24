@@ -1,0 +1,19 @@
+{{- $title := cond .IsHome site.Title (printf "%s | %s" .Title site.Title) -}}
+{{- $desc := .Description | default site.Params.description -}}
+{{- $scriptExtra := "" -}}
+{{- $connectExtra := "" -}}
+{{- with site.Params.analytics }}{{ if .cloudflare }}{{ $scriptExtra = " https://static.cloudflareinsights.com" }}{{ $connectExtra = " https://cloudflareinsights.com" }}{{ end }}{{ end -}}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'self'{{ $scriptExtra }}; connect-src {{ site.Params.status.base }}{{ $connectExtra }}">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="{{ $desc }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<title>{{ $title }}</title>
+<link rel="canonical" href="{{ .Permalink }}">
+{{- $css := resources.Get "css/glasshouse.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

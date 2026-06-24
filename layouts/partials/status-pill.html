@@ -1,0 +1,6 @@
+{{- $base := site.Params.status.base -}}
+{{- $slug := site.Params.status.slug -}}
+<a class="status-pill" id="statusPill" data-state="loading" data-base="{{ $base }}" data-slug="{{ $slug }}" href="{{ $base }}/status/{{ $slug }}" title="Service status">
+  <span class="sdot" aria-hidden="true"></span>
+  <span class="stext">Status</span>
+</a>

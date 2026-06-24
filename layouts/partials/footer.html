@@ -1,0 +1,5 @@
+{{- with site.Params.footer }}
+<footer class="foot">
+  <span>Operated by <a href="{{ .link }}">{{ .operator }}</a> since {{ .year }}</span>
+</footer>
+{{- end }}

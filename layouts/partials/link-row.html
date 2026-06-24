@@ -1,0 +1,8 @@
+{{- $href := .href -}}
+{{- $display := .url | default (replaceRE "^https?://" "" $href | strings.TrimSuffix "/") -}}
+{{- $newTab := false -}}
+{{- if isset . "newtab" }}{{ $newTab = .newTab }}{{ end -}}
+<a class="row" href="{{ $href }}"{{ if $newTab }} target="_blank" rel="noopener"{{ end }}>
+  <span class="lbl">{{ .label }}</span>
+  <span class="r"><span class="url">{{ $display }}</span></span>
+</a>

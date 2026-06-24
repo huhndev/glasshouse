@@ -1,0 +1,7 @@
+{{ define "main" }}
+    <p class="tag">{{ site.Params.tagline }}</p>
+    {{ partial "intro.html" . }}
+    {{ with site.Params.note }}<p class="offer">{{ . }}</p>{{ end }}
+    {{ partial "actions.html" . }}
+    {{ partial "links.html" . }}
+{{ end }}

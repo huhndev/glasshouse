@@ -1,0 +1,11 @@
+<div class="cta">
+  {{- with site.Params.primary }}
+  <a class="btn btn-primary" href="{{ .href }}"{{ if .newTab }} target="_blank" rel="noopener"{{ end }}>
+    {{- with .icon }}{{ partial "icon.html" . }}{{ end }}
+    {{ .label }}
+  </a>
+  {{- end }}
+  {{- with site.Params.secondary }}
+  <a class="btn btn-ghost" href="{{ .href }}"{{ if .newTab }} target="_blank" rel="noopener"{{ end }}>{{- with .icon }}{{ partial "icon.html" . }}{{ end }}{{ .label }}</a>
+  {{- end }}
+</div>
